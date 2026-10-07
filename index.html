@@ -55,6 +55,7 @@ nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
 nav a{display:block;padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15.5px}
 nav a:hover{background:var(--soft)}
 .burger{display:none;width:48px;height:48px;border:0;background:var(--soft);border-radius:12px;font-size:24px;color:var(--ink);cursor:pointer}
+@media(max-width:1100px){nav a{padding:8px 8px;font-size:14.5px}}
 @media(max-width:940px){.burger{display:block}.hd .btn-wa{display:none}
  nav{position:fixed;inset:68px 0 auto 0;background:var(--card);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s;box-shadow:var(--sh-lg)}
  nav.on{max-height:520px}nav ul{flex-direction:column;padding:10px 18px 18px}nav a{padding:14px;font-size:18px}}
@@ -97,6 +98,13 @@ nav a:hover{background:var(--soft)}
 .ticks{list-style:none;padding:0;margin:0 0 22px;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
 .ticks li{padding-right:26px;position:relative;font-weight:600}
 .ticks li:before{content:"";position:absolute;right:0;top:.62em;width:14px;height:14px;border-radius:4px;background:var(--c,var(--green));transform:rotate(45deg)}
+.lib{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.lc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column}
+.lc .im{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-size:14px;font-weight:600}
+.lc .im.sq{aspect-ratio:1/1}.lc .im[data-k]{cursor:zoom-in}
+.lc .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lc div.t{padding:14px 16px 16px}.lc h3{font-size:18px;margin-bottom:2px}.lc p{margin:0;color:var(--muted);font-size:15px}
+.sub{font-size:20px;font-weight:800;margin:30px 0 14px}
 .pair{display:grid;gap:12px}.pair figure,.one{margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh);cursor:zoom-in;background:var(--card)}.one{max-width:340px;margin-inline:auto}.pair figure:first-child{max-width:340px;margin-inline:auto}
 .rev{text-align:center}.rev .btn{margin-top:6px}
 .ph{border:2px dashed var(--line);border-radius:var(--r);min-height:220px;display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted);background:var(--card)}
@@ -131,7 +139,7 @@ footer{padding:30px 0;text-align:center;color:var(--muted);font-size:14.5px;bord
 <header class="hd"><div class="wrap">
  <a class="logo" href="#home" aria-label="مش لحالك — الرئيسية"><img src="images/t00.webp" width="98" height="46" alt="شعار مكتبة ومطبعة مش لحالك Not Alone"></a>
  <nav id="nav" aria-label="القائمة الرئيسية"><ul>
-  <li><a href="#home">الرئيسية</a></li><li><a href="#services">الخدمات</a></li><li><a href="#works">أعمالنا</a></li><li><a href="#offers">العروض</a></li><li><a href="#students">للطلاب</a></li><li><a href="#business">للأعمال</a></li><li><a href="#about">من نحن</a></li><li><a href="#contact">تواصل معنا</a></li>
+  <li><a href="#home">الرئيسية</a></li><li><a href="#services">الخدمات</a></li><li><a href="#library">المكتبة</a></li><li><a href="#works">أعمالنا</a></li><li><a href="#offers">العروض</a></li><li><a href="#students">للطلاب</a></li><li><a href="#business">للأعمال</a></li><li><a href="#about">من نحن</a></li><li><a href="#contact">تواصل معنا</a></li>
  </ul></nav>
  <a class="btn btn-wa" href="https://wa.me/962797102723" target="_blank" rel="noopener">اطلب عبر واتساب</a>
  <button class="burger" id="bg" aria-label="القائمة" aria-expanded="false" aria-controls="nav">☰</button>
@@ -158,6 +166,16 @@ footer{padding:30px 0;text-align:center;color:var(--muted);font-size:14.5px;bord
   <div class="grp" style="--c:var(--yellow)"><h3>المناسبات</h3><p>ويلكم بورد وكروت وستكرات وتوزيعات.</p><button class="svc" data-i="8">ويلكم بورد</button><button class="svc" data-i="4">كروت</button><button class="svc" data-i="7">توزيعات وستكرات</button></div>
   <div class="grp" style="--c:var(--green)"><h3>الطلاب والمدارس</h3><p>جداول وأنشطة وقرطاسية.</p><button class="svc" data-i="9">جداول مدرسية</button><button class="svc" data-i="10">أنشطة مدرسية</button><button class="svc" data-i="11">قرطاسية</button></div>
  </div>
+</div></section>
+
+<section id="library"><div class="wrap">
+ <span class="tag g">المكتبة</span><h2>المكتبة: خدمات سريعة ومستلزماتك كاملة</h2>
+ <p class="lead">اطبع وخذ مستلزماتك من مكان واحد. للتوفر والأسعار تواصل معنا على واتساب.</p>
+ <h3 class="sub">خدمات سريعة</h3>
+ <div class="lib"><div class="lc"><div class="im sq" data-k="35"><img src="images/t35.webp" loading="lazy" decoding="async" style="object-position:50% 40%" alt="طباعة على الورق — إعلان من مش لحالك"></div><div class="t"><h3>طباعة على الورق</h3><p>A4 وA3 وA0 وجميع الأحجام</p></div></div><div class="lc"><div class="im sq" data-k="36"><img src="images/t36.webp" loading="lazy" decoding="async" style="object-position:50% 40%" alt="طباعة على الكرتون — إعلان من مش لحالك"></div><div class="t"><h3>طباعة على الكرتون</h3><p>160 / 200 / 350 غرام، جلوسي ومات</p></div></div><div class="lc"><div class="im sq" data-k="32"><img src="images/t32.webp" loading="lazy" decoding="async" style="object-position:50% 70%" alt="أكواب مطبوعة بأسماء وتصاميم شخصية"></div><div class="t"><h3>طباعة مجات</h3><p>أكواب بأسماء وتصاميم حسب الطلب</p></div></div></div>
+ <h3 class="sub">مستلزمات</h3>
+ <div class="lib"><div class="lc"><div class="im" data-k="33"><img src="images/t33.webp" loading="lazy" decoding="async" style="object-position:50% 50%" alt="قسم القرطاسية: أقلام ألوان وممحاة وأدوات مدرسية"></div><div class="t"><h3>قرطاسية</h3><p>كل ما تحتاجه للدراسة والمكتب</p></div></div><div class="lc"><div class="im" data-k="30"><img src="images/t30.webp" loading="lazy" decoding="async" style="object-position:50% 45%" alt="رفوف مستلزمات مكاتب: ملفات وآلات حاسبة ودباسات ومفكرات لاصقة"></div><div class="t"><h3>مستلزمات مكاتب</h3><p>للمكاتب والشركات</p></div></div><div class="lc"><div class="im" data-k="34"><img src="images/t34.webp" loading="lazy" decoding="async" style="object-position:50% 50%" alt="دفاتر طلابية بأنواع مختلفة معروضة على الرفوف"></div><div class="t"><h3>مستلزمات طلابية</h3><p>دفاتر وأدوات للمدرسة والجامعة</p></div></div><div class="lc"><div class="im" data-k="37"><img src="images/t37.webp" loading="lazy" decoding="async" style="object-position:50% 40%" alt="مستلزمات هندسة — إعلان من مش لحالك"></div><div class="t"><h3>مستلزمات هندسة</h3><p>ملازم وشيتات وتقارير وأدوات لطلاب الهندسة</p></div></div><div class="lc"><div class="im" data-k="31"><img src="images/t31.webp" loading="lazy" decoding="async" style="object-position:50% 35%" alt="شنط ظهر مدرسية ومكتبية معروضة في المكتبة"></div><div class="t"><h3>شنط وماركات عالمية</h3><p>منها Vertex</p></div></div></div>
+ <div class="cta" style="margin-top:26px"><a class="btn btn-wa" href="https://wa.me/962797102723" target="_blank" rel="noopener">اسأل عن المتوفر</a></div>
 </div></section>
 
 <section id="works" class="band"><div class="wrap">
@@ -290,7 +308,7 @@ function show(c){
  var l=W.filter(function(w){return c==='all'||w[2].split(' ').indexOf(c)>-1});
  gal.innerHTML=l.length?l.map(function(w){return'<figure data-k="'+w[0]+'"><img src="images/t'+w[0]+'.webp" width="'+w[3]+'" height="'+w[4]+'" loading="lazy" decoding="async" alt="'+w[1]+'"></figure>'}).join(''):'<div class="empty" style="column-span:all">صور هذا القسم ستُضاف قريباً — <a href="https://wa.me/962797102723" target="_blank" rel="noopener">اسألنا على واتساب</a></div>'}
 F.forEach(function(f){var b=document.createElement('button');b.textContent=f[1];b.dataset.f=f[0];b.onclick=function(){show(f[0])};fl.appendChild(b)});
-document.addEventListener('click',function(e){var f=e.target.closest('figure[data-k]');if(!f)return;$('mt').textContent='';mb.innerHTML='<div class="lb"><img src="images/w'+f.dataset.k+'.webp" alt="'+f.querySelector('img').alt+'"></div>';open_(m)});
+document.addEventListener('click',function(e){var f=e.target.closest('[data-k]');if(!f)return;$('mt').textContent='';mb.innerHTML='<div class="lb"><img src="images/w'+f.dataset.k+'.webp" alt="'+f.querySelector('img').alt+'"></div>';open_(m)});
 show('all');
 /* القائمة */
 var nav=$('nav'),bg=$('bg');
